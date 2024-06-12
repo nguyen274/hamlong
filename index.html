@@ -1,75 +1,217 @@
 <!DOCTYPE html>
-<html lang="vi" class="no-js">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Chúc mừng 8/3 chị em HT DT HS</title>
-		<link rel="shortcut icon" href="./logo-01.png">
-		<link rel="stylesheet" href="https://use.typekit.net/eqx3jwb.css">
-		<link rel="stylesheet" type="text/css" href="./style.css">
-		<script>document.documentElement.className = "js";
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HÀM LONG TICKET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ticket-container">
+        <div class="ticket" id="ticket">
+            <h1 class="title">HÀM LONG TICKET</h1>
+            <div class="invitation" id="invitation">
+                <div class="avatar-container circle" id="avatar-container">
+                    <img id="avatar" class="avatar" src="" alt="Avatar">
+                </div>
+                <div class="info">
+                    <p class="name">Họ và Tên</p>
+                    <p class="location"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="controls" id="controls">
+        <div class="controls-toggle" id="controls-toggle">❮</div>
+        <input type="file" id="upload" accept="image/*" class="upload">
+        <label for="upload" class="upload-label">Upload avatar</label>
+        <label for="name">Họ Tên</label>
+        <input type="text" id="name" class="name-input">
+        <label for="ticketColor">Màu nền Ticket</label>
+        <input type="color" id="ticketColor" value="#d32f2f">
+        <label for="backgroundUpload" class="upload-label">Upload Background Ticket</label>
+        <input type="file" id="backgroundUpload" accept="image/*" class="upload">
+        <label for="ticketZoom">Zoom Ticket</label>
+        <input type="range" id="ticketZoom" min="50" max="100" value="50">
+        <label for="avatarShape">Hình dạng khung avatar</label>
+        <select id="avatarShape" class="shape-select">
+            <option value="circle">Tròn</option>
+            <option value="square">Vuông</option>
+        </select>
+        <label for="avatarSize">Kích cỡ Avatar</label>
+        <input type="range" id="avatarSize" min="50" max="300" value="100">
+        <label for="avatarHorizontal">Chiều ngang</label>
+        <input type="range" id="avatarHorizontal" min="0" max="100" value="50">
+        <label for="avatarVertical">Chiều dọc</label>
+        <input type="range" id="avatarVertical" min="0" max="100" value="50">
+        <label for="containerHorizontal">Vị trí khung: Chiều ngang</label>
+        <input type="range" id="containerHorizontal" min="0" max="100" value="50">
+        <label for="containerVertical">Vị trí khung: Chiều dọc</label>
+        <input type="range" id="containerVertical" min="0" max="100" value="50">
+        <label for="borderSize">Kích cỡ viền khung</label>
+        <input type="range" id="borderSize" min="0" max="20" value="2">
+        <label for="borderColor">Màu viền khung</label>
+        <input type="color" id="borderColor" value="#ffffff">
+        <button id="download">Tải xuống</button><br>
+    </div>
+    <script>
+        const upload = document.getElementById('upload');
+        const avatar = document.getElementById('avatar');
+        const avatarContainer = document.getElementById('avatar-container');
+        const nameInput = document.getElementById('name');
+        const avatarSize = document.getElementById('avatarSize');
+        const avatarHorizontal = document.getElementById('avatarHorizontal');
+        const avatarVertical = document.getElementById('avatarVertical');
+        const containerHorizontal = document.getElementById('containerHorizontal');
+        const containerVertical = document.getElementById('containerVertical');
+        const borderSize = document.getElementById('borderSize');
+        const borderColor = document.getElementById('borderColor');
+        const download = document.getElementById('download');
+        const nameField = document.querySelector('.name');
+        const ticket = document.getElementById('ticket');
+        const ticketColor = document.getElementById('ticketColor');
+        const backgroundUpload = document.getElementById('backgroundUpload');
+        const ticketZoom = document.getElementById('ticketZoom');
+        const avatarShape = document.getElementById('avatarShape');
+        const controls = document.getElementById('controls');
+        const controlsToggle = document.getElementById('controls-toggle');
+        const ticketContainer = document.querySelector('.ticket-container');
 
-var supportsCssVars = function supportsCssVars() {
-  var e,
-      t = document.createElement("style");
-  return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e;
-};
+        let ticketBackgroundImage = '';
+        let originalWidth, originalHeight;
 
-supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-<style>
-	a:link {
-  text-decoration: none;
-		color:red;
-}
-</style>
-	</head>
-	<body class="demo-1 loading">
-		<main>
-			<div class="message">Chuyển sang xem trên máy tính đi thì nó không bị như này đâu !!!.</div>
-			<div class="frame">
-			</div>
-			<div class="content">
-				<div class="grid">
-					<div class="grid__item pos-2"><div class="grid__item-img" style="background-image:url(./img/img1.png);" class="hover" ></div></div>
-					<div class="grid__item pos-3"><div class="grid__item-img" style="background-image:url(./img/img3.png);" class="hover"></div></div>
-					<div class="grid__item pos-4"><div class="grid__item-img" style="background-image:url(./img/img4.png);" class="hover"></div></div>
-					<div class="grid__item pos-1"><div class="grid__item-img" style="background-image:url(./img/img2.png);" class="hover"></div></div>
-					<div class="grid__item pos-5"><div class="grid__item-img" style="background-image:url(./img/img5.png);" class="hover"></div></div>
-					<div class="grid__item pos-6"><div class="grid__item-img" style="background-image:url(./img/img6.png);" class="hover"></div></div>
-					<div class="grid__item pos-7"><div class="grid__item-img" style="background-image:url(./img/img7.png);" class="hover"></div></div>
-					<div class="grid__item pos-8"><div class="grid__item-img" style="background-image:url(./img/img8.png);" class="hover"></div></div>
-					<div class="grid__item pos-9"><div class="grid__item-img" style="background-image:url(./img/img9.png);" class="hover"></div></div>
-					<div class="grid__item pos-10"><div class="grid__item-img" style="background-image:url(./img/img10.png);" class="hover"></div></div>
-					<div class="grid__item pos-11"><div class="grid__item-img" style="background-image:url(./img/img11.png);" class="hover"></div></div>
-					<div class="grid__item pos-12"><div class="grid__item-img" style="background-image:url(./img/img12.png);" class="hover"></div></div>
-					<div class="grid__item pos-13"><div class="grid__item-img" style="background-image:url(./img/img13.png);" class="hover"></div></div>
-					<div class="grid__item pos-14"><div class="grid__item-img" style="background-image:url(./img/img14.png);" class="hover"></div></div>
-					<div class="grid__item pos-15"><div class="grid__item-img" style="background-image:url(./img/img15.png);" class="hover"></div></div>
-					<div class="grid__item pos-16"><div class="grid__item-img" style="background-image:url(./img/img16.png);" class="hover"></div></div>
-					<div class="grid__item pos-17"><div class="grid__item-img" style="background-image:url(./img/img17.png);" class="hover"></div></div>
-					<div class="grid__item pos-18"><div class="grid__item-img" style="background-image:url(./img/img18.jpg);" class="hover"></div></div>
-					<div class="grid__item pos-19"><div class="grid__item-img" style="background-image:url(./img/img19.jpg);" class="hover"></div></div>
-					<div class="grid__item pos-20"><div class="grid__item-img" style="background-image:url(./img/img20.jpg);" class="hover"></div></div>
-					
-					<div class="grid__item pos-22"><div class="grid__item-img" style="background-image:url(./img/img22.png);" class="hover"></div></div>
-					<div class="grid__item pos-23"><div class="grid__item-img" style="background-image:url(./img/img23.png);" class="hover"></div></div>
-					<div class="grid__item pos-24"><div class="grid__item-img" style="background-image:url(./img/img24.png);" class="hover"></div></div>
-					<div class="grid__item pos-25"><div class="grid__item-img" style="background-image:url(./img/img25.png);" class="hover"></div></div>
-				</div>
-				
-                <h2 class="content__title no-select">
-					<span><font color="orange">Love</font></span>
-				</h2>
-				<h2 class="content__title no-select" align="center">
-					<span class="content__title-sub"><font color="yellow">Chúc mừng 8/3 các chị em HT-DT-HS</font></span>
-					<br>
-					<span class="content__title-sub"><font color="red">Happy Women’s Day</font></span>
-				</h2><br><a href="#">Click vào đây để tiếp tục xem >></a>
-			</div>
-		</main>
-        <svg class="cursor" width="80" height="80" viewBox="0 0 80 80">
-			<circle class="cursor__inner" cx="40" cy="40" r="20"></circle>
-		</svg>
-		<script src="./script.js"></script>
-	</body>
+        const setMaxDimensions = (imgWidth, imgHeight) => {
+            const maxWidth = window.innerWidth * 0.75;
+            const aspectRatio = imgHeight / imgWidth;
+
+            if (imgWidth > maxWidth) {
+                imgWidth = maxWidth;
+                imgHeight = imgWidth * aspectRatio;
+            }
+
+            return { imgWidth, imgHeight };
+        };
+
+        const updateTicketSize = (zoomValue) => {
+            const scale = zoomValue / 100;
+            ticket.style.width = `${originalWidth * scale}px`;
+            ticket.style.height = `${originalHeight * scale}px`;
+        };
+
+        upload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    avatar.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        backgroundUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    ticketBackgroundImage = event.target.result;
+                    const img = new Image();
+                    img.onload = function() {
+                        let { imgWidth, imgHeight } = setMaxDimensions(img.width, img.height);
+                        originalWidth = imgWidth;
+                        originalHeight = imgHeight;
+                        updateTicketSize(50); // Set initial size to 50% of screen width
+                        ticket.style.backgroundImage = `url(${ticketBackgroundImage})`;
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        nameInput.addEventListener('input', (e) => {
+            nameField.textContent = e.target.value;
+        });
+
+        ticketColor.addEventListener('input', (e) => {
+            ticket.style.backgroundColor = e.target.value;
+            ticket.style.backgroundImage = ticketBackgroundImage ? `url(${ticketBackgroundImage})` : '';
+        });
+
+        ticketZoom.addEventListener('input', (e) => {
+            updateTicketSize(e.target.value);
+        });
+
+        avatarSize.addEventListener('input', (e) => {
+            avatar.style.width = e.target.value + 'px';
+            avatar.style.height = e.target.value + 'px';
+        });
+
+        avatarHorizontal.addEventListener('input', (e) => {
+            const percent = e.target.value;
+            avatar.style.left = `calc(${percent}% - ${avatar.clientWidth / 2}px)`;
+        });
+
+        avatarVertical.addEventListener('input', (e) => {
+            const percent = e.target.value;
+            avatar.style.top = `calc(${percent}% - ${avatar.clientHeight / 2}px)`;
+        });
+
+        containerHorizontal.addEventListener('input', (e) => {
+            const percent = e.target.value;
+            avatarContainer.style.left = `${percent}%`;
+        });
+
+        containerVertical.addEventListener('input', (e) => {
+            const percent = e.target.value;
+            avatarContainer.style.top = `${percent}%`;
+        });
+
+        avatarShape.addEventListener('change', (e) => {
+            const shape = e.target.value;
+            avatarContainer.className = `avatar-container ${shape}`;
+        });
+
+        borderSize.addEventListener('input', (e) => {
+            avatarContainer.style.borderWidth = `${e.target.value}px`;
+        });
+
+        borderColor.addEventListener('input', (e) => {
+            avatarContainer.style.borderColor = e.target.value;
+        });
+
+        download.addEventListener('click', () => {
+            const ticketElement = document.getElementById('ticket');
+            const clone = ticketElement.cloneNode(true);
+            const cloneAvatarContainer = clone.querySelector('.avatar-container');
+            const currentAvatarContainer = document.querySelector('.avatar-container');
+
+            cloneAvatarContainer.className = currentAvatarContainer.className; // Copy all classes
+            cloneAvatarContainer.style.borderWidth = currentAvatarContainer.style.borderWidth; // Copy border width
+            cloneAvatarContainer.style.borderColor = currentAvatarContainer.style.borderColor; // Copy border color
+
+            clone.style.position = 'absolute';
+            clone.style.left = '-9999px';
+            clone.style.backgroundImage = `url(${ticketBackgroundImage})`; // Giữ lại nền
+            clone.style.width = ticket.style.width;
+            clone.style.height = ticket.style.height;
+            document.body.appendChild(clone);
+
+            html2canvas(clone).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'community_master.png';
+                link.href = canvas.toDataURL();
+                link.click();
+                document.body.removeChild(clone);
+            });
+        });
+
+        controlsToggle.addEventListener('click', () => {
+            controls.classList.toggle('controls-hidden');
+            ticketContainer.classList.toggle('ticket-container-expanded');
+            controlsToggle.textContent = controls.classList.contains('controls-hidden') ? '❯' : '❮';
+        });
+    </script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</body>
 </html>
